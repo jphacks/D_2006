@@ -1,18 +1,58 @@
-
 <!DOCTYPE html>
-<html>
-    <style>
-        body{
-            background-color: blueviolet;
-           
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ラバーダックAI</title>
+</head>
+<link rel="stylesheet" href="static/index.css">
+
+<body>
+  <h1 class="H1">ようこそラバーダックAIへ</h1>
+  <h2 class="H2">一緒にデバッグしようぜ！</h2>
+  <div class="buttons">
+    <a href="#" class="btn-start" id="start-btn">　開始　</a>
+    <a href="#" class="btn-pause" id="pause-btn">一時停止</a>
+    <a href="#" class="btn-stop" id="start-btn">　終了　</a>
+  </div>
+  <div id="result-div"></div>
+
+  <script>
+    const startBtn = document.querySelector('#start-btn');
+    const stopBtn = document.querySelector('#stop-btn');
+    const resultDiv = document.querySelector('#result-div');
+
+    SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
+    let recognition = new SpeechRecognition();
+
+    recognition.lang = 'ja-JP';
+    recognition.interimResults = true;
+    recognition.continuous = true;
+
+    let finalTranscript = ''; // 確定した(黒の)認識結果
+
+    recognition.onresult = (event) => {
+      let interimTranscript = ''; // 暫定(灰色)の認識結果
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        let transcript = event.results[i][0].transcript;
+        if (event.results[i].isFinal) {
+          finalTranscript += transcript;
+        } else {
+          interimTranscript = transcript;
         }
-        .char{
-            color: white;
-            font-size: 100px;
-        }
-    </style>
-    <body>
-       <div class="char">hello/div> 
-       <div class="char">world-idichi</div>
-    </body>
+      }
+      resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
+    }
+
+    startBtn.onclick = () => {
+      recognition.start();
+    }
+    stopBtn.onclick = () => {
+      recognition.stop();
+    }
+  </script>
+</body>
+
 </html>
