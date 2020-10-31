@@ -1,8 +1,9 @@
 .btn{
-  width: 100px;
+  width: 300px;
   height: 100px;
-  background-color: ;
+  text-align: center;
 }
 .H1{
-
+  font-size: 50px;
+  color: brown;
 }

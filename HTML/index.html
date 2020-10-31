@@ -10,25 +10,21 @@
 <link rel="stylesheet" href="index.css">
 
 <body>
-  <h1 class="H1">ようこぞ</h1>
+  <h1 class="H1">ようこそ</h1>
   <div class="btn">
     <button type="button">
-      <font size="5">デバッグ開始!</font>
+      <font size="5">デバッグ開始</font>
     </button>
 
     <button type="button">
-      <font size="5" color="#333399">デバッグ終了!</font>
+      <font size="5" color="#333399">デバッグ終了</font>
     </button>
   </div>
 
   <script>
-    //recognition.lang = 'ja-JP';
+    
     SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
-    // if ('SpeechRecognition' in window) {
-    //   // ユーザのブラウザは音声合成に対応しています。
-    // } else {
-    //   // ユーザのブラウザは音声合成に対応していません。
-    // }
+    
     const recognition = new SpeechRecognition();
 
     recognition.interimResults = true;
