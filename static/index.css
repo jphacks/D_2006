@@ -1,0 +1,63 @@
+body{
+  background-image: url();
+}
+
+.btn-start{
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #04f610;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 5px #2fd152;
+  border-radius: 7px;
+  font-size: 30px;
+}
+.btn-pause{
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #f00914;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 5px #eb3838;
+  border-radius: 7px;
+  font-size: 30px;
+}
+
+.btn-stop{
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #000000;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 5px #313642;
+  border-radius: 7px;
+  font-size: 30px;
+}
+.btn-pause:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+.btn-start:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+.btn-stop:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+.H1{
+  font-size: 50px;
+  color: brown;
+  text-align: center;
+}
+.H2{
+  font-size: 30px;
+  text-align: center;
+}
