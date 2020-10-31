@@ -2,54 +2,60 @@ body{
   background-image: url();
 }
 
+.buttons{
+  padding: 20px;              /* ä½™ç™½æŒ‡å®š */
+  height: 100px;              /* é«˜ã•æŒ‡å®š */
+  text-align:  center;  
+}
+
 .btn-start{
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
-  background: #04f610;/*ƒ{ƒ^ƒ“F*/
+  background: #04f610;
   color: #FFF;
   border-bottom: solid 5px #2fd152;
   border-radius: 7px;
   font-size: 30px;
+  margin:  10px;
 }
 .btn-pause{
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
-  background: #f00914;/*ƒ{ƒ^ƒ“F*/
+  background: #f00914;
   color: #FFF;
   border-bottom: solid 5px #eb3838;
   border-radius: 7px;
   font-size: 30px;
+  margin:  10px;
 }
 
 .btn-stop{
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
-  background: #000000;/*ƒ{ƒ^ƒ“F*/
+  background: #000000;
   color: #FFF;
   border-bottom: solid 5px #313642;
   border-radius: 7px;
   font-size: 30px;
+  margin:  10px;
 }
 .btn-pause:active {
-  /*ƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚Æ‚«*/
   -webkit-transform: translateY(4px);
-  transform: translateY(4px);/*‰º‚É“®‚­*/
-  border-bottom: none;/*ü‚ğÁ‚·*/
+  transform: translateY(4px);
+  border-bottom: none;
 }
 .btn-start:active {
-  /*ƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚Æ‚«*/
   -webkit-transform: translateY(4px);
-  transform: translateY(4px);/*‰º‚É“®‚­*/
-  border-bottom: none;/*ü‚ğÁ‚·*/
+  transform: translateY(4px);
+  border-bottom: none;
 }
 .btn-stop:active {
-  /*ƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚Æ‚«*/
   -webkit-transform: translateY(4px);
-  transform: translateY(4px);/*‰º‚É“®‚­*/
-  border-bottom: none;/*ü‚ğÁ‚·*/
+  transform: translateY(4px);
+  border-bottom: none;
 }
 
 .H1{
