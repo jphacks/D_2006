@@ -4,33 +4,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>ラバーダックAI</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AHOKUSA F rank A</title>
 </head>
-
-<link rel="stylesheet" href="../static/index.css">
+<link type="text/css" rel="stylesheet" href="../static/index.css">
 
 <body>
-  <div class="H1">
-    <h1 id="welcom">Windows 95</h1>
-  </div>
-  
-  <h2 class="H2">minecrasoft</h2>
 
   <div class="buttons">
     <a href="#" class="btn-start" id="start-btn">　開始　</a>
-    <!-- <a href="#" class="btn-pause" id="pause-btn">一時停止</a> -->
     <a href="#" class="btn-stop" id="stop-btn">　終了　</a>
   </div>
-  <h3 id="countdown" class="countdown"></h3>
-  <h3 class=H3>出力文章</h3>
 
   <hr class="line">
+  <br>
+  <div id="your_container">
 
-  <div id="result-div"></div>
+    <!-- チャットの外側部分① -->
+    <div id="bms_messages_container">
+      <!-- ヘッダー部分② -->
+      <div id="bms_chat_header">
+        <!--ステータス-->
+        <div id="bms_chat_user_status">
+          <!--ステータスアイコン-->
+          <div id="bms_status_icon">●</div>
+          <!--ユーザー名-->
+          <div id="bms_chat_user_name">ラバーダックAI</div>
+        </div>
+      </div>
+
+      <!-- タイムライン部分③ -->
+      <div id="bms_messages">
+
+        <!--メッセージ１（左側）-->
+        <div class="bms_message bms_left">
+          <div class="bms_message_box">
+            <div class="bms_message_content">
+              <div class="bms_message_text">デバッグ開始しよか？</div>
+            </div>
+          </div>
+        </div>
+        <div class="bms_clear"></div><!-- 回り込みを解除（スタイルはcssで充てる） -->
+
+        <!--メッセージ２（右側）-->
+        <div class="bms_message bms_right">
+          <div class="bms_message_box">
+            <div class="bms_message_content">
+              <div class="bms_message_text" Id="result-div"></div>
+            </div>
+          </div>
+        </div>
+        <div class="bms_clear"></div><!-- 回り込みを解除（スタイルはcssで充てる） -->
+      </div>
+
+      <!-- テキストボックス、送信ボタン④ -->
+      <div id="bms_send">
+        <textarea id="bms_send_message"></textarea>
+        <div id="bms_send_btn">送信</div>
+      </div>
+    </div>
+  </div>
   <script type="text/javascript" src="../static/speak.js"></script>
-
-
 </body>
 
 </html>
