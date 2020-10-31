@@ -1,4 +1,4 @@
-body{
+  body{
     background-image: url();
   }
   
@@ -20,7 +20,7 @@ body{
     margin:  10px;
   }
 
-  .btn-pause{
+  /* .btn-pause{
     display: inline-block;
     padding: 0.5em 1em;
     text-decoration: none;
@@ -30,7 +30,7 @@ body{
     border-radius: 7px;
     font-size: 30px;
     margin:  10px;
-  }
+  } */
   
   .btn-stop{
     display: inline-block;
@@ -44,11 +44,11 @@ body{
     margin:  10px;
   }
 
-  .btn-pause:active {
+  /* .btn-pause:active {
     -webkit-transform: translateY(4px);
     transform: translateY(4px);
     border-bottom: none;
-  }
+  } */
 
   .btn-start:active {
     -webkit-transform: translateY(4px);
@@ -63,8 +63,9 @@ body{
   }
   
   .H1{
-    font-size: 50px;
-    color: brown;
+    font-size: 30px;
+    margin: 5px;  
+    color: rgb(194, 58, 58);
     text-align: center;
   }
   
@@ -72,3 +73,26 @@ body{
     font-size: 30px;
     text-align: center;
   }
+
+  .H3{
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .line{
+     color:#ff0000;
+  }
+
+  .countdown{
+    font-size: 40px;
+    text-align: center;
+  }
+  
+  .result-div{
+    font-size: 30px;
+  }
+  .countdown{
+
+  }
+
+ 
