@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ラバーダックAI</title>
+</head>
+<link rel="stylesheet" href="index.css">
+
+<body>
+  <h1 class="H1">ようこぞ</h1>
+  <div class="btn">
+    <button type="button">
+      <font size="5">デバッグ開始!</font>
+    </button>
+
+    <button type="button">
+      <font size="5" color="#333399">デバッグ終了!</font>
+    </button>
+  </div>
+
+  <script>
+    //recognition.lang = 'ja-JP';
+    SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
+    // if ('SpeechRecognition' in window) {
+    //   // ユーザのブラウザは音声合成に対応しています。
+    // } else {
+    //   // ユーザのブラウザは音声合成に対応していません。
+    // }
+    const recognition = new SpeechRecognition();
+
+    recognition.interimResults = true;
+
+    recognition.onresult = (event) => {
+      alert(event.results[0][0].transcript);
+    }
+
+    recognition.start();
+  </script>
+</body>
+
+</html>
