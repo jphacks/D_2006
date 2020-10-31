@@ -1,6 +1,5 @@
-@media screen and (max-width:1024px) {
-  .buttons{
-    padding: 20px;              /* 余白指定 */
+ .buttons{
+    padding: 50px;              /* 余白指定 */
     height: 100px;              /* 高さ指定 */
     text-align:  center;  
   }
@@ -203,36 +202,37 @@
         background: #13178E; /*マウスポインタを当てた時にアクティブな色になる*/
         cursor: pointer;/*マウスポインタを当てた時に、カーソルが指の形になる*/
     }
-}
-
-@media screen and (min-width: 480px) {
+ 
+@media screen and (max-width: 480px) {
     .buttons{
-    padding: 2px;              /* 余白指定 */
-    height: 10px;              /* 高さ指定 */
-    text-align:  center;  
-     }
+    padding: 5px;              
+    height: 20%; 
+    text-align:center;  
+    margin: auto;
+    width:80%;
+    }
   
     .btn-start{
     display: inline-block;
-    padding: 0.5em 1em;
     text-decoration: none;
     background: #04f610;
     color: #FFF;
     border-bottom: solid 5px #2fd152;
     border-radius: 8px;
-    font-size: 20px;
+    font-size: 120%;
+    height: 60%;
     margin:  10px;
     }
 
     .btn-stop{
     display: inline-block;
-    padding: 0.5em 2em;
     text-decoration: none;
     background: #000000;
     color: #FFF;
     border-bottom: solid 5px #313642;
-    border-radius: 7px;
-    font-size: 20px;
+    border-radius: 8px;
+    font-size: 120%;
+    height: 60%;
     margin:  10px;
      }
 
@@ -264,10 +264,9 @@
     ここで充てた高さと横幅がそのままスタイルになる仕組み */
 
     height:500px;/*ここはご自由に*/
-    width: 50%;/*ここはご自由に*/
+    width: 80%;/*ここはご自由に*/
     text-align:  center; 
     margin: auto;
-    
     }
     /* チャットの外側部分① */
     #bms_messages_container{
