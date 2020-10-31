@@ -25,19 +25,26 @@ recognition.onresult = (event) => {
   resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
 }
 const welcome = document.querySelector("#welcom")
-const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
 startBtn.onclick = () => {
-  console.log("3");
-  let welcom=welcome.textContent;
-  welcome.textContent = "3";
-  await sleep(1000);
-  welcome.textContent = "2";
-  console.log("2");
-  await sleep(1000);
-  console.log("1");
-  welcome.textContent = "1";
-  await sleep(1000);
-
+  var dt = new Date();
+  var sec=3;
+  console.log("Start: ", dt);
+  // 終了時刻を開始日時+カウントダウンする秒数に設定
+  var endDt = new Date(dt.getTime() + sec * 1000);
+  console.log("End : ", endDt);
+  welcome.textContent=endDt;
+  var cnt = 3;
+  var id = setInterval(function(){
+    cnt--;
+    console.log(cnt);
+    welcome.textContent=cnt;
+    // 現在日時と終了日時を比較
+    dt = new Date();
+    if(dt.getTime() >= endDt.getTime()){
+      clearInterval(id);
+      console.log("Finish!");
+    }
+  }, 1000);
   recognition.start();
 }
 pauseBtn.onclick = () => {
