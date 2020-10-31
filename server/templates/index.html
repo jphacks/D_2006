@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ラバーダックAI</title>
+</head>
+
+<link rel="stylesheet" href="/static/index.css">
+<script type="text/javascript" src="static/speak.js"></script>
+  <body>
+
+    <h1 class="H1" id="welcom">ようこそラバーダックAIへ</h1>
+    <h2 class="H2">一緒にデバッグしようぜ！</h2>
+
+    <div class="buttons">
+      <a href="#" class="btn-start" id="start-btn" onclick="start()">　開始　</a>
+      <a href="#" class="btn-pause" id="pause-btn">一時停止</a>
+      <a href="#" class="btn-stop" id="stop-btn">　終了　</a>
+    </div>
+    
+    <div id="result-div"></div>
+    
+
+  </body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Practice</title>
+  <style>
+    body {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: skyblue;
+      cursor: pointer;
+      transition: 0.8s;
+      margin: 0 8px 8px 0;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    .win {
+      background: pink;
+      border-radius: 50%;
+      transform: rotate(360deg);
+    }
+
+    .lose {
+      transform: scale(0.9);
+    }
+  </style>
+
+<body>
+  <script>
+    'use strict';
+    const num = 5;
+    const winner = Math.floor(Math.random() * num);
+
+    for (let i = 0; i < num; i++) {
+      const div = document.createElement('div');
+      div.classList.add('box');
+      div.textContent = i;
+      div.addEventListener('click', () => {
+        if (i === winner) {
+          div.textContent = "win!";
+          div.classList.add("win");
+        } else {
+          div.textContent = "lose!";
+          div.classList.add("lose");
+        }
+      });
+
+      document.body.appendChild(div);
+    }
+
+  </script>
+</body>
+</head>
+
+</html> -->
