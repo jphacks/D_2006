@@ -1,5 +1,4 @@
 const startBtn = document.querySelector('#start-btn');
-const pauseBtn = document.querySelector("#pause-btn");
 const stopBtn = document.querySelector('#stop-btn');
 const resultDiv = document.querySelector('#result-div');
 
@@ -46,10 +45,38 @@ startBtn.onclick = () => {
     }
   }, 1000);
   recognition.start();
+
 }
-pauseBtn.onclick = () => {
-  recognition.stop();
-}
+
 stopBtn.onclick = () => {
   recognition.stop();
+}
+
+// 送信ボタンはクリックされると、JSON形式でUserがしゃべった言葉をサーバへ送信する処理が行われる
+let send_btn=document.querySelector("#bms_send");
+console.log(send_btn);
+send_btn.onclick=()=>{
+  // let user_say=document.querySelectorAll("#bms_message_bms_right");
+  // let last_say=user_say[user_say.length-1];
+  // let text=last_say.textContent;
+  // recognition.stop();
+
+  console.log("send start");
+
+  const obj = {"anal_text": "test"};
+  const method = "POST";
+  const body = JSON.stringify(obj);
+
+  const headers = {
+  'Accept': 'application/json',
+  'Content-Type': 'application/json'
+  };
+  fetch("http://localhost:5000/anal", {method, headers, body}).then((res)=> 
+    res.json()).then(ans=>{console.log(ans["analed_text"]);
+                            
+  } ).catch(
+    console.error
+    );
+
+
 }
