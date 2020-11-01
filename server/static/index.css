@@ -241,6 +241,7 @@
     }
     body{
         margin:0 0 0 0;
+        bottom: 60px;
     }
     .buttons{
         padding: 5px;              
@@ -300,11 +301,12 @@
     bms_messages_containerの方で、縦横いっぱいに広がってくれるので、
     ここで充てた高さと横幅がそのままスタイルになる仕組み */
     
-    height:500px;/*ここはご自由に*/
-    width: 100%;/*ここはご自由に*/
+    /* height:500px;
+    width: 100%; */
     text-align:  center; 
-    margin: auto;
+    /* margin: auto;
     padding-top:46px;
+     */
     }
     /* チャットの外側部分① */
     #bms_messages_container{
@@ -346,6 +348,7 @@
     background-color: #eee;
     box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2) inset;/*ヘッダーの下に影を入れる*/
     font-family: "Sawarabi Mincho";
+    
     }
     /* メッセージ全般のスタイル */
     .bms_message {

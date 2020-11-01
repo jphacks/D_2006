@@ -11,7 +11,8 @@ recognition.continuous = true;
 let finalTranscript = ''; // 確定した(黒の)認識結果
 
 recognition.onresult = (event) => {
-  const resultDiv = document.querySelector('#result-div');
+  var resultDiv = document.querySelectorAll('.user_say');
+  resultDiv=resultDiv[resultDiv.length-1];
   let interimTranscript = ''; // 暫定(灰色)の認識結果
   for (let i = event.resultIndex; i < event.results.length; i++) {
     let transcript = event.results[i][0].transcript;
