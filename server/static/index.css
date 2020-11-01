@@ -1,8 +1,21 @@
-@media screen and (max-width:1024px) {
-  .buttons{
-    padding: 20px;              /* 余白指定 */
-    height: 100px;              /* 高さ指定 */
+ header{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 10000;
+}
+ body{
+     margin: 0 0 0 0;
+ }
+
+ .line{
+    margin:15px 0 0 0;
+ }
+ .buttons{
+    padding: 10px;              /* 余白指定 */
+    height: 70px;              /* 高さ指定 */
     text-align:  center;  
+    
   }
   
   .btn-start{
@@ -13,7 +26,7 @@
     color: #FFF;
     border-bottom: solid 5px #2fd152;
     border-radius: 7px;
-    font-size: 30px;
+    font-size: 25px;
     margin:  10px;
   }
 
@@ -25,7 +38,7 @@
     color: #FFF;
     border-bottom: solid 5px #313642;
     border-radius: 7px;
-    font-size: 30px;
+    font-size: 25px;
     margin:  10px;
   }
 
@@ -53,16 +66,19 @@
 
 #your_container{
     height:500px;/*ここはご自由に*/
-    width: 50%;/*ここはご自由に*/
+    width: 100%;/*ここはご自由に*/
     text-align:  center; 
     margin: auto;
-    
+    padding-top:46px;
 }
 /* チャットの外側部分① */
 #bms_messages_container{
     height: 100%;/*your_containerに対して100%になる */
     width: 100%;/*your_containerに対して100%になる */
     background-color: #eee;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 
 /* ヘッダー部分② */
@@ -87,6 +103,7 @@
         float: left;/* bms_chat_user_statusに対して左寄せ */
         line-height: 2em;/*高さ調整*/
         padding-left: 8px;
+        font-family: "Nikukyu";
     }
 
 /* タイムライン部分③ */
@@ -97,6 +114,9 @@
     border-left: 1px solid #ddd;
     background-color: #eee;
     box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2) inset;/*ヘッダーの下に影を入れる*/
+    height:615px;
+    font-family: "Sawarabi Mincho";
+    /* height: auto; */
 }
     /* メッセージ全般のスタイル */
     .bms_message {
@@ -203,36 +223,55 @@
         background: #13178E; /*マウスポインタを当てた時にアクティブな色になる*/
         cursor: pointer;/*マウスポインタを当てた時に、カーソルが指の形になる*/
     }
-}
-
-@media screen and (min-width: 480px) {
+    footer{
+        margin-top: auto;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+ 
+@media screen and (max-width: 480px) {
+    header{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 10000;
+    }
+    .line{
+        margin:0 0 0 0;
+    }
+    body{
+        margin:0 0 0 0;
+        
+    }
     .buttons{
-    padding: 2px;              /* 余白指定 */
-    height: 10px;              /* 高さ指定 */
-    text-align:  center;  
-     }
+        padding: 5px;              
+        height: 20%; 
+        text-align:center;  
+        margin: auto;
+    }
   
     .btn-start{
     display: inline-block;
-    padding: 0.5em 1em;
     text-decoration: none;
     background: #04f610;
     color: #FFF;
     border-bottom: solid 5px #2fd152;
     border-radius: 8px;
-    font-size: 20px;
+    font-size: 120%;
+    height: 60%;
     margin:  10px;
     }
 
     .btn-stop{
     display: inline-block;
-    padding: 0.5em 2em;
     text-decoration: none;
     background: #000000;
     color: #FFF;
     border-bottom: solid 5px #313642;
-    border-radius: 7px;
-    font-size: 20px;
+    border-radius: 8px;
+    font-size: 120%;
+    height: 60%;
     margin:  10px;
      }
 
@@ -262,11 +301,12 @@
     /* 高さや幅など、好きな様に設定
     bms_messages_containerの方で、縦横いっぱいに広がってくれるので、
     ここで充てた高さと横幅がそのままスタイルになる仕組み */
-
-    height:500px;/*ここはご自由に*/
-    width: 50%;/*ここはご自由に*/
+    
+    height:500px;
+    width: 100%;
     text-align:  center; 
     margin: auto;
+    padding-top:46px;
     
     }
     /* チャットの外側部分① */
@@ -308,6 +348,8 @@
     border-left: 1px solid #ddd;
     background-color: #eee;
     box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2) inset;/*ヘッダーの下に影を入れる*/
+    font-family: "Sawarabi Mincho";
+    /* height: auto; */
     }
     /* メッセージ全般のスタイル */
     .bms_message {
@@ -371,18 +413,18 @@
     }
     /* 回り込みを解除 */
     .bms_clear {
-        clear: both; /* 左メッセージと右メッセージの回り込み(float)の効果の干渉を防ぐために必要（これが無いと、自分より下のメッセージにfloatが影響する） */
+        clear: both;
 
     }
 
-    /* テキストエリア、送信ボタン④ */
+    /* テキストエリア送信ボタン */
     #bms_send {
-    background-color:#eee;/*タイムラインの色と同じにする*/
-    border-right: 1px solid #ddd;
-    border-left: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    height: 48px;
-    padding: 4px;
+        background-color:#eee;
+        border-right: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        height: 48px;
+        margin:auto;
     }
     #bms_send_message{
         width: calc(100% - 75px);/*常に送信ボタンの横幅を引いたサイズに動的に計算*/
@@ -413,6 +455,12 @@
     #bms_send_btn:hover {
         background: #13178E; /*マウスポインタを当てた時にアクティブな色になる*/
         cursor: pointer;/*マウスポインタを当てた時に、カーソルが指の形になる*/
+    }
+    footer{
+        width: 100%;
+        margin-top: auto;
+        position: absolute;
+        bottom: 0;
     }
 }
 

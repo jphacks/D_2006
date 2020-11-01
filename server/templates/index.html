@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>AHOKUSA F rank AI2</title>
+  <title>ラバーダックデバッグAI</title>
 </head>
 
   <body>
@@ -62,62 +62,58 @@
     }
   </style>
 
-<body>
-
-  <div class="buttons">
-    <a href="#" class="btn-start" id="start-btn">　開始　</a>
-    <a href="#" class="btn-stop" id="stop-btn">　終了　</a>
-  </div>
-
-  <hr class="line">
-  <br>
-  <div id="your_container">
-
-    <!-- チャットの外側部分① -->
-    <div id="bms_messages_container">
-      <!-- ヘッダー部分② -->
-      <div id="bms_chat_header">
-        <!--ステータス-->
-        <div id="bms_chat_user_status">
-          <!--ステータスアイコン-->
-          <div id="bms_status_icon">●</div>
-          <!--ユーザー名-->
-          <div id="bms_chat_user_name">ラバーダックAI</div>
-        </div>
+<header>
+  <!-- チャットの外側 -->
+  <div id="bms_messages_container">
+    <div id="bms_chat_header">
+      <div id="bms_chat_user_status">
+        <div id="bms_chat_user_name">ラバーダックデバッグ</div>
       </div>
+    </div>
+</header>
+
+<link type="text/css" rel="stylesheet" href="../static/index.css">
+<link href="https://fonts.googleapis.com/earlyaccess/nikukyu.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
+
+<body>
+  <div id="your_container">
 
       <!-- タイムライン部分③ -->
       <div id="bms_messages">
 
-        <!--メッセージ１（左側）-->
+        <!--開始メッセージ-->
         <div class="bms_message bms_left">
           <div class="bms_message_box">
             <div class="bms_message_content">
               <div class="bms_message_text">デバッグ開始しよか？</div>
+              <div class="buttons">
+                <a href="#" class="btn-start" id="start-btn">　開始　</a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="bms_clear"></div><!-- 回り込みを解除（スタイルはcssで充てる） -->
+        <div class="bms_clear"></div>
 
-        <!--メッセージ２（右側）-->
-        <div class="bms_message bms_right">
-          <div class="bms_message_box">
-            <div class="bms_message_content">
-              <div class="bms_message_text" Id="result-div"></div>
-            </div>
-          </div>
-        </div>
-        <div class="bms_clear"></div><!-- 回り込みを解除（スタイルはcssで充てる） -->
-      </div>
+        <!--自分の言ったことメッセージ-->
+        <div Id="make-result"></div>
 
-      <!-- テキストボックス、送信ボタン④ -->
-      <div id="bms_send">
-        <textarea id="bms_send_message"></textarea>
-        <div id="bms_send_btn">AI チェック</div>
+        <!--終了メッセージ-->
+        <div Id="make-stop-btn"></div>
+
       </div>
     </div>
   </div>
   <script type="text/javascript" src="speak.js"></script>
 </body>
 
+<footer>
+  <!-- 送信ボタン-->
+  <div id="bms_send">
+    <textarea id="bms_send_message"></textarea>
+    <div id="bms_send_btn">送信</div>
+  </div>
+</footer>
+
+<script type="text/javascript" src="../static/speak.js"></script>
 </html>
