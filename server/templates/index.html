@@ -8,19 +8,76 @@
   <title>ラバーダックデバッグAI</title>
 </head>
 
+  <body>
+
+    <h1 class="H1" id="welcom">ようこそラバーダックAIへ</h1>
+    <h2 class="H2">一緒にデバッグしようぜ！</h2>
+
+    <div class="buttons">
+      <a href="#" class="btn-start" id="start-btn">　開始　</a>
+      <a href="#" class="btn-pause" id="pause-btn">一時停止</a>
+      <a href="#" class="btn-stop" id="stop-btn">　終了　</a>
+    </div>
+    
+    <div id="result-div"></div>
+    
+  <link rel="stylesheet" href="index.css">
+
+  </body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Practice</title>
+  <style>
+    body {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: skyblue;
+      cursor: pointer;
+      transition: 0.8s;
+      margin: 0 8px 8px 0;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    .win {
+      background: pink;
+      border-radius: 50%;
+      transform: rotate(360deg);
+    }
+
+    .lose {
+      transform: scale(0.9);
+    }
+  </style>
+
+<header>
+  <!-- チャットの外側 -->
+  <div id="bms_messages_container">
+    <div id="bms_chat_header">
+      <div id="bms_chat_user_status">
+        <div id="bms_chat_user_name">ラバーダックデバッグ</div>
+      </div>
+    </div>
+</header>
+
 <link type="text/css" rel="stylesheet" href="../static/index.css">
 <link href="https://fonts.googleapis.com/earlyaccess/nikukyu.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
 
 <body>
   <div id="your_container">
-
-    <!-- チャットの外側 -->
-    <div id="bms_messages_container">
-      <div id="bms_chat_header">
-        <div id="bms_chat_user_status">
-          <div id="bms_chat_user_name">ラバーダックデバッグ</div>
-        </div>
-      </div>
 
       <!-- タイムライン部分③ -->
       <div id="bms_messages">
@@ -45,15 +102,18 @@
         <div Id="make-stop-btn"></div>
 
       </div>
-        
-      <!-- 送信ボタン-->
-      <div id="bms_send">
-        <textarea id="bms_send_message"></textarea>
-        <div id="bms_send_btn">送信</div>
-      </div>
     </div>
   </div>
-  <script type="text/javascript" src="../static/speak.js"></script>
+  <script type="text/javascript" src="speak.js"></script>
 </body>
 
+<footer>
+  <!-- 送信ボタン-->
+  <div id="bms_send">
+    <textarea id="bms_send_message"></textarea>
+    <div id="bms_send_btn">送信</div>
+  </div>
+</footer>
+
+<script type="text/javascript" src="../static/speak.js"></script>
 </html>

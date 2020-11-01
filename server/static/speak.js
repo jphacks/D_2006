@@ -11,7 +11,8 @@ recognition.continuous = true;
 let finalTranscript = ''; // 確定した(黒の)認識結果
 
 recognition.onresult = (event) => {
-  const resultDiv = document.querySelector('#result-div');
+  var resultDiv = document.querySelectorAll('.user_say');
+  resultDiv=resultDiv[resultDiv.length-1];
   let interimTranscript = ''; // 暫定(灰色)の認識結果
   for (let i = event.resultIndex; i < event.results.length; i++) {
     let transcript = event.results[i][0].transcript;
@@ -26,30 +27,30 @@ recognition.onresult = (event) => {
 }
 const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
 
-function rec_start(){
+function rec_start() {
   console.log("rec_start");
   recognition.start();
 }
 
-const SEND_STATE_NOTSEND="not_send"
-const SEND_STATE_SENT="sent"
+const SEND_STATE_NOTSEND = "not_send"
+const SEND_STATE_SENT = "sent"
 
 
 startBtn.onclick = () => {
-  
+
   rec_start();
   var elem2 = document.getElementById("make-result");
-  elem2.innerHTML = `
+  elem2.insertAdjacentHTML("beforeend", `
     <div class="bms_message bms_right">
       <div class="bms_message_box">
         <div class="bms_message_content">
-          <div class="bms_message_text" Id="result-div" value="not_send"></div>
+          <div class="bms_message_text user_say" Id="result-div" value="not_send"></div>
         </div>
       </div>
     </div>
     <div class="bms_clear"></div>
-  `;
-  
+  `);
+
   var elem = document.getElementById("make-stop-btn");
   elem.innerHTML = `
     <div class="bms_message bms_left">
@@ -75,7 +76,7 @@ startBtn.onclick = () => {
   `;
 }
 
-function stop_rec(){
+function stop_rec() {
   console.log("recog end");
   recognition.stop();
 }
@@ -83,9 +84,9 @@ function stop_rec(){
 // // 送信ボタン
 // let send_btn=document.querySelector("#bms_send_btn");
 // 送信ボタンはクリックされると、JSON形式でUserがしゃべった言葉をサーバへ送信する処理が行われる
-let send_btn=document.querySelector("#bms_send");
+let send_btn = document.querySelector("#bms_send");
 console.log(send_btn);
-send_btn.onclick=()=>{
+send_btn.onclick = () => {
   // let user_say=document.querySelectorAll("#bms_message_bms_right");
   // let last_say=user_say[user_say.length-1];
   // let text=last_say.textContent;
@@ -93,26 +94,44 @@ send_btn.onclick=()=>{
 
   console.log("send start");
 
-  /*送信されない情報を取得*/
-  
+  /*送信されてない情報を取得*/
+  var ele = document.querySelectorAll(".user_say");
+  let servertext = "";
 
+  // var promiss = new Promise(function (a) {
+  //   forEach(function (element) {
+  //     if (element.getAttribute("value") === SEND_STATE_NOTSEND) {
+  //       servertext += element.Text;
+  //       console.log(element.Text);
+  //       element.setAttribute("value", SEND_STATE_SENT);
+  //     }
+  //   }
+  //   } ) );
 
-
-  const obj = {"anal_text": "test"};
+  // await promiss();
+  for(let element of ele){
+          if (element.getAttribute("value") === SEND_STATE_NOTSEND) {
+            servertext += element.textContent;
+            console.log(element.textContent);
+            element.setAttribute("value", SEND_STATE_SENT);
+      }
+  }
+  if(servertext==="")return;
+  const obj = { "anal_text": servertext };
   const method = "POST";
   const body = JSON.stringify(obj);
 
   const headers = {
-  'Accept': 'application/json',
-  'Content-Type': 'application/json'
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
   };
-  fetch("https://3841a23ac114.ngrok.io/anal", {method, headers, body}).then((res)=> 
-    res.json()).then(ans=>{
-    console.log("send OK");
-    console.log(ans["analed_text"]);
-    var text=ans["analed_text"];
-    var elem = document.getElementById("make-stop-btn");
-    elem.insertAdjacentHTML("beforeend",`
+  fetch("https://3841a23ac114.ngrok.io/anal", { method, headers, body }).then((res) =>
+    res.json()).then(ans => {
+      console.log("send OK");
+      console.log(ans["analed_text"]);
+      var text = ans["analed_text"];
+      var elem = document.getElementById("make-stop-btn");
+      elem.insertAdjacentHTML("beforeend", `
     <div class="bms_message bms_left">
       <div class="bms_message_box">
         <div class="bms_message_content">
@@ -121,10 +140,8 @@ send_btn.onclick=()=>{
       </div>
     </div>
     `);
-                            
-  } ).catch(
-    console.error
+
+    }).catch(
+      console.error
     );
-
-
 }
