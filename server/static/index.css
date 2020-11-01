@@ -385,13 +385,13 @@
     }
     /* 回り込みを解除 */
     .bms_clear {
-        clear: both; /* 左メッセージと右メッセージの回り込み(float)の効果の干渉を防ぐために必要（これが無いと、自分より下のメッセージにfloatが影響する） */
+        clear: both;
 
     }
 
-    /* テキストエリア、送信ボタン④ */
+    /* テキストエリア送信ボタン */
     #bms_send {
-    background-color:#eee;/*タイムラインの色と同じにする*/
+    background-color:#eee;
     border-right: 1px solid #ddd;
     border-left: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
