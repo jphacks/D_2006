@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ラバーダックデバッグAI</title>
+</head>
+
+<link type="text/css" rel="stylesheet" href="../static/index.css">
+<link href="https://fonts.googleapis.com/earlyaccess/nikukyu.css" rel="stylesheet">
+
+<body>
+  <div id="your_container">
+
+    <!-- チャットの外側 -->
+    <div id="bms_messages_container">
+      <div id="bms_chat_header">
+        <div id="bms_chat_user_status">
+          <div id="bms_chat_user_name">ラバーダックデバッグ</div>
+        </div>
+      </div>
+
+      <!-- タイムライン部分③ -->
+      <div id="bms_messages">
+
+        <!--開始メッセージ-->
+        <div class="bms_message bms_left">
+          <div class="bms_message_box">
+            <div class="bms_message_content">
+              <div class="bms_message_text">デバッグ開始しよか？</div>
+              <div class="buttons">
+                <a href="#" class="btn-start" id="start-btn">　開始　</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bms_clear"></div>
+
+        <!--自分の言ったことメッセージ-->
+        <div Id="make-result"></div>
+
+        <!--終了メッセージ-->
+        <div Id="make-stop-btn"></div>
+
+      </div>
+        
+      <!-- 送信ボタン-->
+      <div id="bms_send">
+        <textarea id="bms_send_message"></textarea>
+        <div id="bms_send_btn">送信</div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../static/speak.js"></script>
+</body>
+
+</html>
