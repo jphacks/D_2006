@@ -39,16 +39,16 @@ startBtn.onclick = () => {
   
   rec_start();
   var elem2 = document.getElementById("make-result");
-  elem2.innerHTML = `
+  elem2.insertAdjacentHTML( "beforeend",`
     <div class="bms_message bms_right">
       <div class="bms_message_box">
         <div class="bms_message_content">
-          <div class="bms_message_text" Id="result-div" value="not_send"></div>
+          <div class="bms_message_text user_say" Id="result-div" value="not_send"></div>
         </div>
       </div>
     </div>
     <div class="bms_clear"></div>
-  `;
+  `);
   
   var elem = document.getElementById("make-stop-btn");
   elem.innerHTML = `
@@ -93,12 +93,21 @@ send_btn.onclick=()=>{
 
   console.log("send start");
 
-  /*送信されない情報を取得*/
-  
+  /*送信されてない情報を取得*/
+  var ele=document.querySelectorAll(".user_say");
+  let servertext="初期";
+  const tmp= async()=>{
+    for(let element of ele ){
+      if(element.getAttribute("value")===SEND_STATE_NOTSEND){
+        servertext+=element.textContent+"baka";
+        element.setAttribute("value",SEND_STATE_SENT);
+      }
+    }
+  };
 
 
-
-  const obj = {"anal_text": "test"};
+  await tmp();
+  const obj = {"anal_text": servertext};
   const method = "POST";
   const body = JSON.stringify(obj);
 

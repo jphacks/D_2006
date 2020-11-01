@@ -70,6 +70,9 @@
     height: 100%;/*your_containerに対して100%になる */
     width: 100%;/*your_containerに対して100%になる */
     background-color: #eee;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 
 /* ヘッダー部分② */
@@ -106,6 +109,7 @@
     background-color: #eee;
     box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2) inset;/*ヘッダーの下に影を入れる*/
     height:615px;
+    font-family: "Sawarabi Mincho";
 }
     /* メッセージ全般のスタイル */
     .bms_message {
@@ -288,6 +292,8 @@
     height: 100%;/*your_containerに対して100%になる */
     width: 100%;/*your_containerに対して100%になる */
     background-color: #eee;
+    position: -webkit-sticky;
+    position: sticky;
     }
 
     /* ヘッダー部分② */
@@ -322,6 +328,7 @@
     border-left: 1px solid #ddd;
     background-color: #eee;
     box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2) inset;/*ヘッダーの下に影を入れる*/
+    font-family: "Sawarabi Mincho";
     }
     /* メッセージ全般のスタイル */
     .bms_message {
