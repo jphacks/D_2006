@@ -1,7 +1,15 @@
+ body{
+     margin: 0 0 0 0;
+ }
+
+ .line{
+    margin:15px 0 0 0;
+ }
  .buttons{
-    padding: 50px;              /* 余白指定 */
-    height: 100px;              /* 高さ指定 */
+    padding: 10px;              /* 余白指定 */
+    height: 70px;              /* 高さ指定 */
     text-align:  center;  
+    
   }
   
   .btn-start{
@@ -12,7 +20,7 @@
     color: #FFF;
     border-bottom: solid 5px #2fd152;
     border-radius: 7px;
-    font-size: 30px;
+    font-size: 25px;
     margin:  10px;
   }
 
@@ -24,7 +32,7 @@
     color: #FFF;
     border-bottom: solid 5px #313642;
     border-radius: 7px;
-    font-size: 30px;
+    font-size: 25px;
     margin:  10px;
   }
 
@@ -52,7 +60,7 @@
 
 #your_container{
     height:500px;/*ここはご自由に*/
-    width: 50%;/*ここはご自由に*/
+    width: 100%;/*ここはご自由に*/
     text-align:  center; 
     margin: auto;
     
@@ -86,6 +94,7 @@
         float: left;/* bms_chat_user_statusに対して左寄せ */
         line-height: 2em;/*高さ調整*/
         padding-left: 8px;
+        font-family: "Nikukyu";
     }
 
 /* タイムライン部分③ */
@@ -96,6 +105,7 @@
     border-left: 1px solid #ddd;
     background-color: #eee;
     box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2) inset;/*ヘッダーの下に影を入れる*/
+    height:615px;
 }
     /* メッセージ全般のスタイル */
     .bms_message {
@@ -204,12 +214,17 @@
     }
  
 @media screen and (max-width: 480px) {
+    .line{
+        margin:0 0 0 0;
+    }
+    body{
+        margin:0 0 0 0;
+    }
     .buttons{
-    padding: 5px;              
-    height: 20%; 
-    text-align:center;  
-    margin: auto;
-    width:80%;
+        padding: 5px;              
+        height: 20%; 
+        text-align:center;  
+        margin: auto;
     }
   
     .btn-start{
@@ -264,7 +279,7 @@
     ここで充てた高さと横幅がそのままスタイルになる仕組み */
 
     height:500px;/*ここはご自由に*/
-    width: 80%;/*ここはご自由に*/
+    width: 100%;/*ここはご自由に*/
     text-align:  center; 
     margin: auto;
     }
@@ -370,13 +385,13 @@
     }
     /* 回り込みを解除 */
     .bms_clear {
-        clear: both; /* 左メッセージと右メッセージの回り込み(float)の効果の干渉を防ぐために必要（これが無いと、自分より下のメッセージにfloatが影響する） */
+        clear: both;
 
     }
 
-    /* テキストエリア、送信ボタン④ */
+    /* テキストエリア送信ボタン */
     #bms_send {
-    background-color:#eee;/*タイムラインの色と同じにする*/
+    background-color:#eee;
     border-right: 1px solid #ddd;
     border-left: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
