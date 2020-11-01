@@ -1,72 +1,6 @@
 import CaboCha
 import Parsing
-
-
-class Tree:
-    def __init__(self):
-        self.chunk_list = []
-        self.token_list = []
-        self.chunk_num = 0
-        self.token_num = 0
-    
-    class Chunk:
-        def __init__(self, string, num):
-        #必要な変数の宣言、引数のデータを切り分けて各々の変数に振り分け
-            #print(num, string)
-            st = string.split(' ')
-            #print(st)
-            self.chunk_id = int(num)
-            self.link = st[1][0]
-            self.main_num = st[2][0]
-            self.factional = st[2][2]
-            self.score = st[3][0:-2]
-            #self.print_all()
-
-        def print_all(self):
-        #全変数を表示
-            print(self.chunk_id)
-            print(self.link)
-            print(self.main_num)
-            print(self.factional)
-            print(self.score)
-            
-    def add_chunk(self, string):
-        self.chunk_list.append(self.Chunk(string, self.chunk_num))
-        self.chunk_num += 1
-        self.token_num = 0
-            
-    class Token:
-        def __init__(self, string, num):
-        #必要な変数の宣言、引数のデータを切り分けて各々の変数に振り分け
-            #print(num, string)
-            st = string.split(',')
-            #print(st)
-            self.chunk_id = num
-            self.text = st[0].split('\t')[0]
-            self.surface = st[0].split('\t')[1]
-            self.detail1 = st[1]
-            self.detail2 = st[2]
-            self.detail3 = st[3]
-            self.inflected_from = st[4]
-            self.inflected_type = st[5]
-            self.original = st[6]
-            #self.print_all()
-
-        def print_all(self):
-        #全変数を表示
-            print(self.chunk_id)
-            print(self.text)
-            print(self.surface)
-            print(self.detail1)
-            print(self.detail2)
-            print(self.detail3)
-            print(self.inflected_from)
-            print(self.inflected_type)
-            print(self.original)
-
-    def add_token(self, string):
-        self.token_list.append(self.Token(string, self.token_num))
-        self.token_num += 1
+import classes
 
             
 def virtual_server():   #サーバ側での動作をシュミレートしている
@@ -84,7 +18,7 @@ def virtual_server():   #サーバ側での動作をシュミレートしてい�
 #解析結果をまとめ上げる
 #--------------------------------------------
     res_file = open('parse_result.txt')     #解析結果ファイルの読み込み
-    tr = Tree()     #解析結果ファイルを項目ごとにTreeクラスにまとめる
+    tr = classes.Tree()     #解析結果ファイルを項目ごとにTreeクラスにまとめる
     for res in res_file:
         if res[0:3] == 'EOS':   #ファイルの終端を検知
             break
@@ -101,7 +35,16 @@ def virtual_server():   #サーバ側での動作をシュミレートしてい�
     combine_num, combine_str, combine_list, count = -2, "", [], -1
     nouns = []  #名詞の単語を集める
     for i, word in enumerate(tr.token_list):  #単語集を走破
-        if word.surface == "名詞":  #名詞かどうかを判定
+        if word.surface == "接頭詞":
+            #print(combine_num, combine_str, combine_list, word.text)
+            nouns.append([combine_str, combine_list])   #それまで連続していた名詞達を結合した物をリストに保存
+            count += 1
+            combine_str = word.text    #文字列を結合
+            combine_list = [count]  #結合した文字のインデックスを保存
+            nouns.append([word.text, [count]])   #名詞ならリストに追加
+            combine_num = i
+                
+        elif word.surface == "名詞":  #名詞かどうかを判定
             count += 1  #カウンタを加算
             if i == combine_num+1:  #一つ前のcombine_numと一致(前回検知した名詞から連続している)
                 if combine_str == '':   #一つ前の名詞を追加する
@@ -119,6 +62,7 @@ def virtual_server():   #サーバ側での動作をシュミレートしてい�
             combine_num = i     #nounsリスト内でのインデックスを保存
             nouns.append([word.text, [count]])   #名詞ならリストに追加
             #print([word.text, count])
+        #print(combine_num, combine_str, combine_list)
             
     if combine_str != '':   #最後に結合文字列リスト内に残っている結合文字列を保存
         nouns.append([combine_str, [combine_list]])
@@ -130,17 +74,17 @@ def virtual_server():   #サーバ側での動作をシュミレートしてい�
 #IT用語集と照合
 #--------------------------------------------
     detection = matching(nouns, dic_data)       #マッチング関数の実行
-    print(detection)
-    print()
-    print()
+    #print(detection)
+    #print()
+    #print()
 
 #--------------------------------------------
 #前処理
 #--------------------------------------------
     mark_word = Make_mark_word(detection)
-    print(mark_word)
-    print()
-    print()
+    #print(mark_word)
+    #print()
+    #print()
  
 #--------------------------------------------
 #検知結果の部分の{}を付加する
