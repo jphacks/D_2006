@@ -96,17 +96,16 @@ send_btn.onclick=()=>{
   /*送信されてない情報を取得*/
   var ele=document.querySelectorAll(".user_say");
   let servertext="初期";
-  const tmp= async()=>{
-    for(let element of ele ){
-      if(element.getAttribute("value")===SEND_STATE_NOTSEND){
-        servertext+=element.textContent+"baka";
-        element.setAttribute("value",SEND_STATE_SENT);
-      }
-    }
-  };
+  // const tmp= async()=>{
+  //   for(let element of ele ){
+  //     if(element.getAttribute("value")===SEND_STATE_NOTSEND){
+  //       servertext+=element.textContent+"baka";
+  //       element.setAttribute("value",SEND_STATE_SENT);
+  //     }
+  //   }
+  // };
 
 
-  await tmp();
   const obj = {"anal_text": servertext};
   const method = "POST";
   const body = JSON.stringify(obj);
