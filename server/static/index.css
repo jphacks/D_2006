@@ -54,7 +54,9 @@ html,#your_container,#bms_messages_container,body{
     height: 34px;
     background: #ddd;
     border: 1px solid #ccc;
-    position: sticky;
+    position: fixed;
+    top:0;
+    width: 100%;
     
 }
     /* ユーザー名 */
