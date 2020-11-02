@@ -13,4 +13,4 @@ def parsing(sentence):
         f2.write(result2)
 
 if __name__ == "__main__":
-    parsing("12行目において、変数Aはこの処理のために用意されている。アジャイル開発を行っている。")
+    print(parsing("12行目において、変数Aはこの処理のために用意されている。アジャイル開発を行っている。"))

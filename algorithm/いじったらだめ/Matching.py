@@ -17,9 +17,10 @@ def virtual_server(sentence):   #サーバ側での動作をシュミレート�
 #--------------------------------------------
 #解析結果をまとめ上げる
 #--------------------------------------------
-    res_file = open('parse_result.txt')     #解析結果ファイルの読み込み
-    tr = load_tree(res_file)
-    res_file.close()    #解析が終わったのでファイルは不要
+#    res_file = open('parse_result.txt')     #解析結果ファイルの読み込み
+    
+    tr = load_tree(result)
+#    res_file.close()    #解析が終わったのでファイルは不要
 
 #--------------------------------------------
 #文書の解析を行う
@@ -131,8 +132,8 @@ def extract_nouns(tr):
         nouns.append([combine_str, [combine_list]])
         #print(combine_str)
     return nouns
-
-
+  
+  
 def matching(nouns, data):  #マッチング処理
     detection, Severity = [], 2     #detection:検知された名詞の中でも特に難しいと判断された文字列のリスト, Severity: 名詞の閾値調整に使う
     data_sep = data.split()     #分けられた辞書リスト
