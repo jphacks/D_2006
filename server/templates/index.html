@@ -6,25 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ラバーダックデバッグAI</title>
+  <link type="text/css" rel="stylesheet" href="../static/index.css">
+  <link href="https://fonts.googleapis.com/earlyaccess/nikukyu.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
 </head>
-
-<header>
-  <!-- チャットの外側 -->
-  <div id="bms_messages_container">
-    <div id="bms_chat_header">
-      <div id="bms_chat_user_status">
-        <div id="bms_chat_user_name">ラバーダックデバッグ</div>
-      </div>
-    </div>
-</header>
-
-<link type="text/css" rel="stylesheet" href="../static/index.css">
-<link href="https://fonts.googleapis.com/earlyaccess/nikukyu.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
 
 <body>
   <div id="your_container">
-
+    <!-- チャットの外側 -->
+    <div id="bms_messages_container">
+      <div id="bms_chat_header">
+        <div id="bms_chat_user_status">
+          <div id="bms_chat_user_name">ラバーダックデバッグ</div>
+        </div>
+      </div>
       <!-- タイムライン部分③ -->
       <div id="bms_messages">
 
@@ -49,16 +44,15 @@
 
       </div>
     </div>
+    <!-- 送信ボタン-->
+    <div id="bms_send">
+      <textarea id="bms_send_message"></textarea>
+      <div id="bms_send_btn">送信</div>
+      <!-- <div id="start-btn" class="bms_send_btn_c">音声認識</div> -->
+    </div>
   </div>
 </body>
 
-<footer>
-  <!-- 送信ボタン-->
-  <div id="bms_send">
-    <textarea id="bms_send_message"></textarea>
-    <div id="bms_send_btn">送信</div>
-  </div>
-</footer>
-
 <script type="text/javascript" src="../static/speak.js"></script>
+
 </html>
