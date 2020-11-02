@@ -6,9 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ラバーダックデバッグAI</title>
+
   <link type="text/css" rel="stylesheet" href="../static/index.css">
   <link href="https://fonts.googleapis.com/earlyaccess/nikukyu.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
+
+  <script src="../static/intro.js"></script>
+  <link rel="stylesheet" type="text/css" href="../static/introjs.css">
 </head>
 
 <body>
@@ -24,20 +28,26 @@
       <div id="bms_messages">
 
         <!--開始メッセージ-->
-        <div class="bms_message bms_left">
-          <div class="bms_message_box">
-            <div class="bms_message_content">
-              <div class="bms_message_text">デバッグ開始しよか？</div>
-              <div class="buttons">
-                <a href="#" class="btn-start" id="start-btn">　開始　</a>
+        
+          <div class="bms_message bms_left">
+            <div class="bms_message_box">
+              <div class="bms_message_content">
+                <div class="bms_message_text">デバッグ開始しよか？</div>
+                <div class="buttons">
+                  <div data-step='1' data-intro='開始をおして音声認識を開始。話してデバッグしよう!'>
+                    <a href="#" class="btn-start" id="start-btn">　開始　</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        
         <div class="bms_clear"></div>
 
         <!--自分の言ったことメッセージ-->
+        <div data-step='4' data-intro='結果出ますよ。'>
         <div Id="make-result"></div>
+        </div>
 
         <!--終了メッセージ-->
         <div Id="make-stop-btn"></div>
@@ -46,14 +56,22 @@
     </div>
     <!-- 送信ボタン-->
     <div id="bms_send">
-      <textarea id="bms_send_message"></textarea>
+      <div data-step='3' data-intro='送信をおして解析。どこ押すかわかるよな？右のボタンやで。'>
+
+      <input type="text" id="bms_send_message"></input>
       <div id="bms_send_btn">送信</div>
-      <!-- <div id="start-btn" class="bms_send_btn_c">音声認識</div> -->
+      </div>
+    </div>
+    <!-- <div id="bms_speech">音声認識</div> -->
     </div>
   </div>
   <script type="text/javascript" src="speak.js"></script>
 </body>
-
 <script type="text/javascript" src="../static/speak.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    introJs().start();
+  });
+</script>
 
 </html>

@@ -58,7 +58,9 @@ startBtn.onclick = () => {
         <div class="bms_message_content">
           <div class="bms_message_text">デバッグ終わろか？</div>
             <div class="buttons">
-              <a href="#" class="btn-stop" id="stop-btn" onclick=\"stop_rec()\">　終了　</a>
+              <div data-step='2' data-intro='終了で止める。'>
+                <a href="#" class="btn-stop" id="stop-btn" onclick=\"stop_rec()\">　終了　</a>
+              </div>
             </div>
         </div>
       </div >
