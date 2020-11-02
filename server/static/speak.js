@@ -27,7 +27,7 @@ recognition.onresult = (event) => {
   for(let s of div_arr){
     if(finalTranscript.includes(s)){
       flg=true;
-      resultDiv.innerHTML = finalTranscript+"。";
+      resultDiv.innerHTML = finalTranscript;
       make_new_user_say();
       finalTranscript='';
     }
@@ -184,7 +184,6 @@ send_btn.onclick = () => {
     let min_idx=-1;
     for(let s of div_arr){
       f=servertext.indexOf(s,0);
-      
       if(f!=-1){
         if(min_len>f){
           min_len=f;
@@ -193,10 +192,10 @@ send_btn.onclick = () => {
       }
       div_idx++;
     }
-    idx=min_idx;
+    // idx=min_idx;
 
-    if(idx!=-1){
-        idx+=div_arr[min_idx].length;
+    if(min_idx!=-1){
+        idx=min_len+div_arr[min_idx].length;
         innert_text=servertext.substring(0,idx);
         servertext=servertext.substring(idx,servertext.length);
         // element 代入
