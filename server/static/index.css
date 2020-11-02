@@ -55,6 +55,7 @@ html,#your_container,#bms_messages_container,body{
     background: #ddd;
     border: 1px solid #ccc;
     position: sticky;
+    
 }
     /* ユーザー名 */
 #bms_chat_user_name {
