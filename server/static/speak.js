@@ -156,7 +156,9 @@ send_btn.onclick = () => {
 
   // await promiss();
   for (let element of ele) {
-    if (element.getAttribute("value") === SEND_STATE_NOTSEND) {
+    // if (element.getAttribute("value") === SEND_STATE_NOTSEND) {
+    if (element.getAttribute("value")) {
+
       servertext += element.textContent;
       console.log(element.textContent);
       element.setAttribute("value", SEND_STATE_SENT);
@@ -172,25 +174,61 @@ send_btn.onclick = () => {
     return;
   }
 
-  let first_element=ele[0];
+  let ele_count=0;
   let idx=0;
-  while(servertext.length>10){
+  while(true){
     // search div
     let f=0;
+    let div_idx=0;
+    let min_len=100000000;
+    let min_idx=-1;
     for(let s of div_arr){
-      f=servertext.indexOf(s,idx);
+      f=servertext.indexOf(s,0);
+      
       if(f!=-1){
-        break;
+        if(min_len>f){
+          min_len=f;
+          min_idx=div_idx;
+        }  
       }
+      div_idx++;
     }
-    idx=f;
-    innert_text=servertext.substring(0,idx);
-    servertext=servertext.substring(idx,servertext.length);
-    // element 代入
-   
-    
+    idx=min_idx;
+
+    if(idx!=-1){
+        idx+=div_arr[min_idx].length;
+        innert_text=servertext.substring(0,idx);
+        servertext=servertext.substring(idx,servertext.length);
+        // element 代入
+        if(ele_count>=ele.length){
+          // new ele
+          make_new_user_say();
+          let t = document.querySelectorAll(".user_say");
+          let laste=t[t.length-1];
+          laste.textContent=innert_text;
+        }
+        else{
+          // ele
+          ele[ele_count++].textContent=innert_text;
+        }
+    }else{
+      let innert_text=servertext;
+      if(ele_count>=ele.length){
+        // new ele
+        make_new_user_say();
+        let t = document.querySelectorAll(".user_say");
+        let laste=t[t.length-1];
+        laste.textContent=innert_text;
+      }
+      else{
+        // ele
+        ele[ele_count++].textContent=innert_text;
+      }
+      break;
+    }
   }
 
+    
 
 
   const obj = { "anal_text": servertext };
