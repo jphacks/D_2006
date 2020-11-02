@@ -4,7 +4,7 @@ import sys,os
 from flask import request,Response
 from flask_cors import CORS
 from flask.helpers import make_response
-app=Flask(__name__)
+app=Flask(__name__,static_url_path="/")
 CORS(app)
 
 
@@ -35,9 +35,5 @@ def anal():
     return json.dumps(test),200
     
 if __name__ == "__main__":
-    # app.static_folder="static"
-    app.static_url_path=""
-    app.static_folder="templates"
-    app.run(
-         host="0.0.0.0",port=5000,debug=True
-    )
+    print(app.url_map)
+    app.run()
