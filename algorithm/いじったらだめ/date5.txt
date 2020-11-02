@@ -1,0 +1,12 @@
+                           送信ボタンは-D                
+                       クリックされると、---------------D
+    <ORGANIZATION>JSON</ORGANIZATION>形式で---D         |
+          <ORGANIZATION>User</ORGANIZATION>が-D         |
+                                     しゃべった-D       |
+                                           言葉を---D   |
+                                           サーバへ-D   |
+                                             送信する-D |
+                                                 処理が-D
+                                                 行われる
+EOS
+

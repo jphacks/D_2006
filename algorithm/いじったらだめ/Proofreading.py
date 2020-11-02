@@ -1,4 +1,4 @@
-# def preefreadin(text:str):
+# def proofreadin(text:str):
 # 	ans=""
 # 	i=0
 # 	while i!=len(text)-1:
@@ -33,7 +33,7 @@
 # 			i+=1
 # 	return ans
 				
-def preefreadin(text):
+def proofreading(text):
 	open_mark=0
 	ans=""
 	for ch in text:
@@ -58,5 +58,5 @@ if __name__ == "__main__":
 	#このtextの{A{B}C}となっているところを{ABC}に直す(※{ABC}は{ABC}のままで)
 	# text = "{{演算{処理}装置}間}での{メモリ共有方式}aaa"
 
-	# print(preefreadin(text))
-	print(preefreadin(text))
+	# print(proofreadin(text))
+	print(proofreading(text))

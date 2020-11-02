@@ -65,6 +65,6 @@ class Tree:
             print(self.original)
 
     def add_token(self, string):
-        self.token_list.append(self.Token(string, self.token_num))
+        self.token_list.append(self.Token(string, self.chunk_num))
         self.token_num += 1
 
