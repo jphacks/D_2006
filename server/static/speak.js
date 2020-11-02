@@ -38,7 +38,6 @@ const SEND_STATE_SENT = "sent"
 
 startBtn.onclick = () => {
 
-  rec_start();
   var elem2 = document.getElementById("make-result");
   elem2.insertAdjacentHTML("beforeend", `
     <div class="bms_message bms_right">
@@ -74,9 +73,13 @@ startBtn.onclick = () => {
     </div >
     <div class="bms_clear"></div>
   `;
+  rec_start();
+
 }
 
 function stop_rec() {
+  finalTranscript = ''; // 確定した(黒の)認識結果
+
   console.log("recog end");
   recognition.stop();
 }
@@ -125,7 +128,7 @@ send_btn.onclick = () => {
     'Accept': 'application/json',
     'Content-Type': 'application/json'
   };
-  fetch("https://3841a23ac114.ngrok.io/anal", { method, headers, body }).then((res) =>
+  fetch("/anal", { method, headers, body }).then((res) =>
     res.json()).then(ans => {
       console.log("send OK");
       console.log(ans["analed_text"]);
