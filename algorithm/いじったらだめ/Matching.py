@@ -4,12 +4,11 @@ import classes
 import Analize
 import Proofreading
             
-def virtual_server():   #サーバ側での動作をシュミレートしている
+def virtual_server(sentence):   #サーバ側での動作をシュミレートしている
 
 #--------------------------------------------
 #必要なデータの収集
 #--------------------------------------------
-    sentence = virtual_input()  #文字の受信
     Parsing.parsing(sentence)   #文書の解析を実行
     dic_file = open('e-words2.txt')    #マッチングファイルの読み込み
     dic_data = dic_file.read()  #分けられていない辞書データ
@@ -202,5 +201,6 @@ def insert_string_to_base(target_string, insert_point, insert_string):
 
 
 if __name__ == "__main__":
-    virtual_server()
+    sentence = virtual_input()  #文字の受信
+    virtual_server(sentence)
     
