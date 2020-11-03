@@ -156,8 +156,8 @@ send_btn.onclick = () => {
 
   // await promiss();
   for (let element of ele) {
-    // if (element.getAttribute("value") === SEND_STATE_NOTSEND) {
-    if (element.getAttribute("value")) {
+    if (element.getAttribute("value") === SEND_STATE_NOTSEND) {
+    // if (element.getAttribute("value")) {
 
       servertext += element.textContent;
       console.log(element.textContent);
