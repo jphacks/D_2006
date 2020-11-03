@@ -1,6 +1,6 @@
 # ラバーダックデバッグAI
 
-[![IMAGE ALT TEXT HERE](https://jphacks.com/wp-content/uploads/2020/09/JPHACKS2020_ogp.jpg)](https://www.youtube.com/watch?v=G5rULR53uMk)
+[![IMAGE ALT TEXT HERE](duck_thumbnail.jpg)]
 
 ## チーム名
 ### チームメンバー
