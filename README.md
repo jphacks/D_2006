@@ -1,6 +1,6 @@
 # ラバーダックデバッグAI
 
-![IMAGE ALT TEXT HERE](duck_thumbnail.jpg)
+<img src="duck_thumbnail.jpg" width="200">
 
 ## チーム名
 ### チームメンバー
