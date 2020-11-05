@@ -13,7 +13,8 @@ CORS(app)
 def root():
     return render_template("index.html")
 
-
+from ..algorithm.いじったらだめ import Matching
+# import algorithm.いじったらだめ.Matching
 '''
 input
 {
@@ -31,7 +32,12 @@ def anal():
     message = request.get_json()
     text=message["anal_text"]
     # todo anal
-    test={"analed_text":text}
+
+    ans=Matching.virtual_server(text)
+    ans=ans.replace("{","<strong>")
+    ans=ans.replace("}","</strong>")
+
+    test={"analed_text":ans}
     return json.dumps(test),200
     
 if __name__ == "__main__":
