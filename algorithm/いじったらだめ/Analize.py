@@ -68,10 +68,10 @@ def analysing(cc):
     
     if len(add_list) != 0:
         devided.append(add_list)
-    try:
-        devided[-1].insert(0,0)
-    except:
-        return [[]]
+        try:
+            devided[-1].insert(0,0)
+        except:
+            pass
 
     #print(devided)
     return devided
