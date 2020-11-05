@@ -271,7 +271,7 @@ send_btn.onclick = () => {
 
 
       text="<h3>あなたの説明の要点"
-      let elem = document.getElementById("make-stop-btn");
+      elem = document.getElementById("make-stop-btn");
       elem.insertAdjacentHTML("beforeend", `
     <div class="bms_message bms_left">
       <div class="bms_message_box">
