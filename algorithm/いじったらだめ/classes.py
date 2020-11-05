@@ -15,8 +15,9 @@ class Tree:
             #print(num, string)
             st = string.split(' ')
             #print(st)
+            #print("num is: ", st[1].split('D')[0])
             self.chunk_id = int(num)
-            self.link = st[1][0]
+            self.link = st[1].split('D')[0]
             self.main_num = st[2][0]
             self.factional = st[2][2]
             self.score = st[3][0:-2]
@@ -31,6 +32,7 @@ class Tree:
             print(self.score)
             
     def add_chunk(self, string):
+        #print('chunk_num', self.chunk_num)
         self.chunk_list.append(self.Chunk(string, self.chunk_num))
         self.chunk_num += 1
         self.token_num = 0
@@ -38,7 +40,7 @@ class Tree:
     class Token:
         def __init__(self, string, num):
         #必要な変数の宣言、引数のデータを切り分けて各々の変数に振り分け
-            #print(num, string)
+            #print('str', num, string)
             st = string.split(',')
             #print(st)
             self.chunk_id = num
@@ -65,6 +67,7 @@ class Tree:
             print(self.original)
 
     def add_token(self, string):
-        self.token_list.append(self.Token(string, self.chunk_num))
+        #print('token_num', self.token_num)
+        self.token_list.append(self.Token(string, self.chunk_num-1))
         self.token_num += 1
 
