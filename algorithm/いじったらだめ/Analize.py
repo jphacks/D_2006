@@ -59,7 +59,10 @@ def analysing(cc):
             #print('None')
             devided.append(add_list)
             link_list.pop(-1)
-            add_list = [link_list[-1]]
+            try:
+                add_list = [link_list[-1]]
+            except:
+                pass
             
         #print()
     
