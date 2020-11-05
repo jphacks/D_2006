@@ -213,7 +213,7 @@ stop_rec()
         if(ele_count>=ele.length){
           // new ele
           make_new_user_say();
-          let t = document.querySelectorAll(".user_say");
+          let t = ele;
           let laste=t[t.length-1];
           laste.textContent=innert_text;
         }
@@ -226,7 +226,7 @@ stop_rec()
       if(ele_count>=ele.length){
         // new ele
         make_new_user_say();
-        let t = document.querySelectorAll(".user_say");
+        let t = ele;
         let laste=t[t.length-1];
         laste.textContent=innert_text;
       }
