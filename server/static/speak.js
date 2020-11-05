@@ -246,8 +246,32 @@ send_btn.onclick = () => {
     res.json()).then(ans => {
       console.log("send OK");
       console.log(ans["analyzed_text"]);
-      var text = ans["analyzed_text"];
-      var elem = document.getElementById("make-stop-btn");
+      let text = ans["analyzed_text"];
+      let diff_words=ans["difficult_words"];
+
+      let out_text="<h3>難しい（わかりにくい）とされた単語</h3><ul>"
+      for(let e of diff_words){
+        out_text+="<li>"+e+"</li>"
+      }
+      out_text+="<ul>"
+
+      let elem = document.getElementById("make-stop-btn");
+      elem.insertAdjacentHTML("beforeend", `
+    <div class="bms_message bms_left">
+      <div class="bms_message_box">
+        <div class="bms_message_content">
+          <div class="bms_message_text">${out_text}</div>
+        </div>
+      </div>
+    </div>
+    `);
+
+
+
+
+
+      text="<h3>あなたの説明の要点"
+      let elem = document.getElementById("make-stop-btn");
       elem.insertAdjacentHTML("beforeend", `
     <div class="bms_message bms_left">
       <div class="bms_message_box">
