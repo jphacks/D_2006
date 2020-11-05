@@ -162,7 +162,7 @@ stop_rec()
   //     }
   //   }
   //   } ) );
-
+  let new_ele=[];
   // await promiss();
   for (let element of ele) {
     if (element.getAttribute("value") === SEND_STATE_NOTSEND) {
@@ -171,9 +171,11 @@ stop_rec()
       servertext += element.textContent;
       console.log(element.textContent);
       element.setAttribute("value", SEND_STATE_SENT);
+      new_ele.push(element);
     }
   }
   
+  ele=new_ele;
 
 
 
