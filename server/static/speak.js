@@ -24,14 +24,14 @@ recognition.onresult = (event) => {
     }
   }
   let flg=false;
-  for(let s of div_arr){
+/*  for(let s of div_arr){
     if(finalTranscript.includes(s)){
       flg=true;
       resultDiv.innerHTML = finalTranscript;
       make_new_user_say();
       finalTranscript='';
     }
-  }
+  }*/
     // if(finalTranscript.includes("です"))
   if(!flg){
      resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
@@ -113,7 +113,12 @@ startBtn.onclick = () => {
 
 function stop_rec() {
   finalTranscript = ''; // 確定した(黒の)認識結果
-
+  remove_elements=document.querySelectorAll(".bms_message .bms_right");
+for (let el of remove_elements){
+  if(el.textContent===""){
+   el.remove()
+}
+}
   console.log("recog end");
   recognition.stop();
 }
@@ -141,7 +146,7 @@ send_btn.onclick = () => {
   // let last_say=user_say[user_say.length-1];
   // let text=last_say.textContent;
   // recognition.stop();
-
+stop_rec()
   console.log("send start");
 
   /*送信されてない情報を取得*/
@@ -177,7 +182,7 @@ send_btn.onclick = () => {
     // なにも話していない
     return;
   }
-
+  const finaltext=servertext;
   let ele_count=0;
   let idx=0;
   while(true){
@@ -234,7 +239,7 @@ send_btn.onclick = () => {
     
 
 
-  const obj = { "analyze_text": servertext };
+  const obj = { "analyze_text": finaltext };
   const method = "POST";
   const body = JSON.stringify(obj);
 

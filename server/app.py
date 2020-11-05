@@ -41,9 +41,9 @@ def anal():
     message = request.get_json()
     text=message["analyze_text"]
    
-   
-
-
+       
+    print("show-->",text)
+    print("show end")
     ## Matching()
     #先に難しい単語を抽出した文を返す(string型)
     #二個目に要点をまとめた文を返す([str])
