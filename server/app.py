@@ -13,31 +13,44 @@ CORS(app)
 def root():
     return render_template("index.html")
 
-from ..algorithm.いじったらだめ import Matching
+import sys
+sys.path.append("../")
+from algorithm.いじったらだめ import Matching
+
 # import algorithm.いじったらだめ.Matching
 '''
 input
 {
-    anal_text:str
+    analyze_text:str
 }
 
 return 
 {
-    analed_text:str
+    difficult_words:{
+        {words},
+        {words},...
+    }
+    analyzed_text:str
 }
 '''
 import json
-@app.route("/anal",methods=["POST"])
+@app.route("/analyze",methods=["POST"])
 def anal():
     message = request.get_json()
-    text=message["anal_text"]
-    # todo anal
+    text=message["analyze_text"]
+   
+   
 
-    ans=Matching.virtual_server(text)
-    ans=ans.replace("{","<strong>")
-    ans=ans.replace("}","</strong>")
 
-    test={"analed_text":ans}
+    ## Matching()
+    #先に難しい単語を抽出した文を返す(list型)
+    #二個目に要点をまとめた文を返す(string型)
+    words,text=Matching.virtual_server(text)
+
+
+
+
+    test={"analyzed_text":text,"difficult_words":words}
     return json.dumps(test),200
     
 if __name__ == "__main__":

@@ -234,7 +234,7 @@ send_btn.onclick = () => {
     
 
 
-  const obj = { "anal_text": servertext };
+  const obj = { "analyze_text": servertext };
   const method = "POST";
   const body = JSON.stringify(obj);
 
@@ -242,11 +242,11 @@ send_btn.onclick = () => {
     'Accept': 'application/json',
     'Content-Type': 'application/json'
   };
-  fetch("/anal", { method, headers, body }).then((res) =>
+  fetch("/analyze", { method, headers, body }).then((res) =>
     res.json()).then(ans => {
       console.log("send OK");
-      console.log(ans["analed_text"]);
-      var text = ans["analed_text"];
+      console.log(ans["analyzed_text"]);
+      var text = ans["analyzed_text"];
       var elem = document.getElementById("make-stop-btn");
       elem.insertAdjacentHTML("beforeend", `
     <div class="bms_message bms_left">
