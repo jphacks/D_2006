@@ -6,13 +6,14 @@ import classes
 import Analize
 import Proofreading
             
+
 def virtual_server(sentence):   #サーバ側での動作をシュミレートしている
 
 #--------------------------------------------
 #必要なデータの収集
 #--------------------------------------------
     res_file = Parsing.parsing(sentence)   #文書の解析を実行
-    dic_file = open('e-words2.txt')    #マッチングファイルの読み込み
+    dic_file = open(os.path.dirname(os.path.abspath(__file__))+'/e-words2.txt')    #マッチングファイルの読み込み
     dic_data = dic_file.read()  #分けられていない辞書データ
 
     
@@ -70,7 +71,7 @@ def virtual_server(sentence):   #サーバ側での動作をシュミレート�
     
     #先に難しい単語を抽出した文を返す(list型)
     #二個目に要点をまとめた文を返す(string型)
-    return result_sentence ,Analyzed_result
+    return mark_word ,Analyzed_result
 
 
 def load_tree(res_file):

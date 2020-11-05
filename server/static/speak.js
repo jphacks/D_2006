@@ -270,13 +270,17 @@ send_btn.onclick = () => {
 
 
 
-      text="<h3>あなたの説明の要点"
+      out_text="<h3>あなたの説明の要点</h3><ul>"
+      for(let t of text){
+		out_text+="<li>"+t+"</li>"
+	}
+	out_text+="</ul>"
       elem = document.getElementById("make-stop-btn");
       elem.insertAdjacentHTML("beforeend", `
     <div class="bms_message bms_left">
       <div class="bms_message_box">
         <div class="bms_message_content">
-          <div class="bms_message_text">${text}</div>
+          <div class="bms_message_text">${out_text}</div>
         </div>
       </div>
     </div>

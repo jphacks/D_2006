@@ -30,7 +30,9 @@ return
         {words},
         {words},...
     }
-    analyzed_text:str
+    analyzed_text:str{
+      {sentence},...
+    }
 }
 '''
 import json
@@ -43,12 +45,13 @@ def anal():
 
 
     ## Matching()
-    #先に難しい単語を抽出した文を返す(list型)
-    #二個目に要点をまとめた文を返す(string型)
+    #先に難しい単語を抽出した文を返す(string型)
+    #二個目に要点をまとめた文を返す([str])
     words,text=Matching.virtual_server(text)
-
-
-
+    if len(words)==0:
+     words.append(["ありませんでした"])
+    if len(text)==0:
+      text.append("解析できませんでした")
 
     test={"analyzed_text":text,"difficult_words":words}
     return json.dumps(test),200
