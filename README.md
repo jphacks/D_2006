@@ -1,4 +1,4 @@
-# ダックINブラウザ
+# デダック(Deduck)
 
 <img src="duck.png">
 
