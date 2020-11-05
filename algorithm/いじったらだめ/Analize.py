@@ -17,7 +17,7 @@ def analyze(tree):
     #print(devided)
     flags = have_noun(devided, chunk_token)
     
-    res = modeling_word(flags, tree, devided[0:-1], chunk_token)
+    res = modeling_word(flags, tree, devided, chunk_token)
     #print(res)
     
     return res
