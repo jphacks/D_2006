@@ -47,6 +47,8 @@
 html,#your_container,#bms_messages_container,body{
     height:100%;
     margin: 0;
+    padding-bottom: 2%;
+    background-color: #eee;
 }
 
 #bms_chat_header {
