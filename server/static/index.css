@@ -47,7 +47,7 @@
 html,#your_container,#bms_messages_container,body{
     height:100%;
     margin: 0;
-    padding-bottom: 2%;
+    padding-bottom: 100%;
     background-color: #eee;
 }
 

@@ -165,7 +165,7 @@ stop_rec()
   let new_ele=[];
   // await promiss();
   for (let element of ele) {
-    // if (element.getAttribute("value") === SEND_STATE_NOTSEND) {
+    if (element.getAttribute("value") === SEND_STATE_NOTSEND) {
     // if (element.getAttribute("value")) {
 
       servertext += element.textContent;
@@ -173,6 +173,7 @@ stop_rec()
       element.setAttribute("value", SEND_STATE_SENT);
       new_ele.push(element);
     // }
+    }
   }
   
   ele=new_ele;
