@@ -52,8 +52,6 @@
 
 <a id="anchor4"></a>
 ### リンク
-対応機種：Windows
-対象ブラウザ：Google Chrome
 
 <a href="http://jphacks-2020.app.idichi.tk/#"> デダックのデモサイトはこちらです （Android/Desktop番Chromeのみ対応）</a>）
 <a id="anchor5"></a>
