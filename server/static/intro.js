@@ -4,6 +4,8 @@
  *
  * Copyright (C) 2017 Afshin Mehrabani (@afshinmeh)
  */
+// ビジーwaitを使う方法
+
 
 (function(f) {
     if (typeof exports === "object" && typeof module !== "undefined") {

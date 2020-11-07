@@ -55,8 +55,8 @@ html,#your_container,#bms_messages_container,body{
     padding: 6px;/*隙間調整*/
     font-size: 16px;
     height: 34px;
-    background: #ddd;
-    border: 1px solid #ccc;
+    background: rgb(63, 62, 62);
+    border: 1px solid rgb(0, 0, 0);
     position: fixed;
     top:0;
     margin-top: 0px;
@@ -70,8 +70,8 @@ html,#your_container,#bms_messages_container,body{
     float: left;/* bms_chat_user_statusに対して左寄せ */
     line-height: 2em;/*高さ調整*/
     padding-left: 8px;
-    font-family: "Nikukyu";
-    color: rgb(0, 0, 0);
+    /* font-family: "Nikukyu";
+    color: rgb(0, 0, 0); */
 }
 
 /* タイムライン部分③ */
@@ -189,4 +189,24 @@ html,#your_container,#bms_messages_container,body{
 #bms_send_btn:hover {
     background: #13178E; /*マウスポインタを当てた時にアクティブな色になる*/
     cursor: pointer;/*マウスポインタを当てた時に、カーソルが指の形になる*/
+}
+
+.start {
+	background: #FFF;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+    z-index: 9000;
+    margin: 0 auto;
+}
+.start p {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+	z-index: 9999;
+	width: 280px;
 }
