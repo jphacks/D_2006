@@ -278,7 +278,7 @@ stop_rec()
 
 
 
-      out_text="<h3>あなたの説明の要点</h3><ul>"
+      out_text="<h3>あなたの説明の要点(階層構造で表現します)</h3><ul>"
       for(let t of text){
 		out_text+="<li>"+t+"</li>"
 	}
