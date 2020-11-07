@@ -17,12 +17,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ラバーダックデバッグAI</title>
 
-  <link type="text/css" rel="stylesheet" href="index.css">
+  <link type="text/css" rel="stylesheet" href="../static/index.css">
   <link href="https://fonts.googleapis.com/earlyaccess/nikukyu.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <script src="intro.js"></script>
-  <link rel="stylesheet" type="text/css" href="introjs.css">
+  <script src="../static/intro.js"></script>
+  <link rel="stylesheet" type="text/css" href="../static/introjs.css">
 </head>
 
 <body>
@@ -31,7 +32,9 @@
     <div id="bms_messages_container">
       <div id="bms_chat_header">
         <div id="bms_chat_user_status">
-          <div id="bms_chat_user_name">ラバーダックデバッグ</div>
+          <div id="bms_chat_user_name">
+            <img id="logo" src="../templates/logo.png" width="190"alt="">
+          </div>
         </div>
       </div>
       <!-- タイムライン部分③ -->
@@ -75,8 +78,21 @@
     <!-- <div id="bms_speech">音声認識</div> -->
     </div>
   </div>
+  <div class="start">
+    <p><img src="../templates/logo.png" alt=""></p>
+  </div>
 </body>
-<script type="text/javascript" src="speak.js"></script>
+<script type="text/javascript" src="../static/speak.js"></script>
+<script>
+  $(function () {
+    setTimeout(function () {
+      $('.start p').fadeIn(1600);
+    }, 500); //0.5秒後にロゴをフェードイン!
+    setTimeout(function () {
+      $('.start').fadeOut(500);
+    }, 2500); //2.5秒後にロゴ含め真っ白背景をフェードアウト！
+  });
+</script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     introJs().start();
