@@ -45,11 +45,14 @@
 <a id="anchor3"></a>
 ### 使い方
 **1. 「開始ボタン」を押して話そう**
+
 <img src="/readme_img/slide1.png">
 **2. 話終わったら「終了ボタン」を押そう**
+
 <img src="/readme_img/slide2.png">
 **3. 右下の「送信ボタン」で解析開始**
 <img src="/readme_img/slide3.png">
+
 **4. 結果が表示させる**
 <img src="/readme_img/slide4.png">
 
