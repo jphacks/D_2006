@@ -46,7 +46,7 @@
 
 <img src="/readme_img/slide3.png">
 
-**4. 結果が表示させる**
+**4. 結果が表示される**
 
 <img src="/readme_img/slide4.png">
 
