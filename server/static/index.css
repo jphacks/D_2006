@@ -192,7 +192,7 @@ html,#your_container,#bms_messages_container,body{
 }
 
 .start {
-	background: #FFF;
+	background: rgba(255,0,0,0.3);;
 	position: fixed;
 	top: 0;
 	left: 0;
