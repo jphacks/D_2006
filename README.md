@@ -104,6 +104,8 @@ Intro.jsを導入したことによりチュートリアルを実装したこと
 - CaboCha/南瓜
 - MeCab
 - Flask
+- intro.js
+- jQuery
 
 <img src="/readme_img/slide5.png">
 
