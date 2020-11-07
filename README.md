@@ -1,4 +1,4 @@
-# デダック(Deduck)
+# デダック De:Duck
 
 <img src="duck.png">
 
