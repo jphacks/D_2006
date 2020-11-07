@@ -210,3 +210,7 @@ html,#your_container,#bms_messages_container,body{
 	z-index: 9999;
 	width: 280px;
 }
+.start img{
+    width: 60%;
+    height: auto;
+}
