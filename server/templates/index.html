@@ -22,6 +22,19 @@
   <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="jquery.lazyscript.js"></script>
+  <script>
+    $(document).ready(function () {
+      var options = {
+        type: "delay",
+        time: 2100,
+        scripts: [
+          "../static/intro.js",
+        ],
+        success: function () { }
+      };
+      $.lazyscript(options);
+    });
+  </script>
 
   <link rel="stylesheet" type="text/css" href="../static/introjs.css">
 </head>
@@ -82,19 +95,6 @@
     <p><img src="../templates/logo.png" alt=""></p>
   </div>
 </body>
-<script>
-  $(document).ready(function () {
-    var options = {
-      type: "delay",
-      time: 2100,
-      scripts: [
-        "../static/intro.js",
-      ],
-      success: function () { }
-    };
-    $.lazyscript(options);
-  });
-</script>
 
 <script type="text/javascript" src="../static/speak.js"></script>
 <script>
