@@ -52,6 +52,9 @@
 
 <a id="anchor4"></a>
 ### リンク
+対応機種：Windows
+対象ブラウザ：Google Chrome
+
 <a href="http://jphacks-2020.app.idichi.tk/#"> デダックのデモサイトはこちらです （Android/Desktop番Chromeのみ対応）</a>）
 <a id="anchor5"></a>
 ### 特長
@@ -71,6 +74,7 @@
 <a id="anchor7"></a>
 ### 今後の展望
 - 要点を抽出する処理において、正確な文節の親子関係を推測する事が技術的に間に合わなかったこと
+- アプリ化すること
 - 音声認識APIがchrome（Android/desktop番）のみしか対応していないので、対応させたい。
 <a id="anchor8"></a>
 ### 注力したこと
