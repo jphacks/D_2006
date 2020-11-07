@@ -233,7 +233,7 @@ def analysing2(chunk_chunk, chunk_token):
                 else:
                     #print("len: ", len(print_hierurchy))
                     if len(print_hierurchy) > 0:
-                        print_add = len(print_hierurchy)*"   "+"・" + print_add
+                        print_add = len(print_hierurchy)*"___"+"・" + print_add
                     print_result.append(print_add)
                     print_add = ""
                 
@@ -261,7 +261,7 @@ def analysing2(chunk_chunk, chunk_token):
                 #print('', end='-')
             #print()
             if len(print_hierurchy) > 0:
-                print_add = len(print_hierurchy)*"   "+"・" + print_add
+                print_add = len(print_hierurchy)*"___"+"・" + print_add
             print_result.append(print_add)
             print_add = ""
             if chunk_chunk[devided[i][-1]] != None:
@@ -281,8 +281,8 @@ def analysing2(chunk_chunk, chunk_token):
         '''
 
     #print()
-    #for word in print_result:
-    #    print(word)
+    for word in print_result:
+        print(word)
     return print_result
 
 
