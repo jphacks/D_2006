@@ -3,6 +3,7 @@ import CaboCha
 def parsing(sentence):
     sentence = sentence.replace('です', 'です。')
     sentence = sentence.replace('ます', 'ます。')
+    sentence = sentence.replace('ました', 'ました。')
     print(sentence)
     parser = CaboCha.Parser()
     tree = parser.parse(sentence)
