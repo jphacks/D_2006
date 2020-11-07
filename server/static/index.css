@@ -212,5 +212,5 @@ html,#your_container,#bms_messages_container,body{
 }
 .start img{
     width: 100vw;
-    height: 100vw;
+    height: auto;
 }
