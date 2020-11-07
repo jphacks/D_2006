@@ -47,7 +47,7 @@
 
 <a id="anchor4"></a>
 ### リンク
-<a href="http://jphacks-2020.app.idichi.tk/#"> デモサイト </a>
+<a href="http://jphacks-2020.app.idichi.tk/#"> デダックのデモサイトはこちらです </a>
 
 <a id="anchor5"></a>
 ### 特長
