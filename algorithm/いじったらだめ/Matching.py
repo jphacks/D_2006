@@ -3,7 +3,9 @@ sys.path.append(os.path.dirname(__file__))
 import CaboCha
 import Parsing
 import classes
-import Analize
+# import Analize
+import Analyze2 as Analize
+
 import Proofreading
             
 
