@@ -1,6 +1,9 @@
 import CaboCha
 
 def parsing(sentence):
+    sentence = sentence.replace('です', 'です。')
+    sentence = sentence.replace('ます', 'ます。')
+    print(sentence)
     parser = CaboCha.Parser()
     tree = parser.parse(sentence)
     result_lattice = tree.toString(CaboCha.FORMAT_LATTICE)
