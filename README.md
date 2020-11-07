@@ -106,7 +106,9 @@ Intro.jsを導入したことによりチュートリアルを実装したこと
 - CaboCha/南瓜
 - MeCab
 - Flask
-<img src="/readme_img/slide.png">
+
+<img src="/readme_img/slide5.png">
+
 ### 独自技術
 #### ハッカソンで開発した独自機能・技術
 - 利用者が入力した音声データから複雑な単語、要点を抽出する機能
